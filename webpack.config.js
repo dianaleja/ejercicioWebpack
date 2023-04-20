@@ -22,6 +22,10 @@ module: {
     rules: [
         {
             test: /\.js$/i,
+            loader: 'html-loader'
+        },
+        {
+            test: /\.js$/i,
             loader: 'babel-loader'
         },
         {
