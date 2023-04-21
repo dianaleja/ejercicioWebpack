@@ -1,0 +1,162 @@
+/* Variables */
+
+$primary-color: black;
+$secondary-color: grey;
+
+/* Mixins */
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+@mixin btn-primary {
+  padding: 15px 25px;
+  border-radius: 10px;
+  border: 1px solid $primary-color;
+  background-color: transparent;
+  color: $primary-color;
+  font-size: 15px;
+  transition: all 1s;
+  
+  &:hover {
+    background-color: $primary-color;
+    color: #fff;
+    cursor: pointer;
+    transition: all 1s;
+  }
+}
+
+@mixin dropdown {
+  position: relative;
+  display: inline-block;
+  
+  .dropdown-content {
+    border-radius: 10px;
+    padding: 20px;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    width: 120px;
+    z-index: 2;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    
+    a {
+      color: black;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      
+      img {
+        margin-right: 10px;
+      }
+      
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+  }
+  
+  &:hover .dropdown-content {
+    display: block;
+  }
+}
+
+/* Functions */
+
+@function min-width($value) {
+  @return "min-width: #{ $value }px";
+}
+
+@function max-width($value) {
+  @return "max-width: #{ $value }px";
+}
+
+/* Styles */
+
+body {
+  margin: 0;
+}
+
+.nav-ul {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.lock {
+  overflow: hidden;
+}
+
+.nav-btns {
+  button {
+    @include button;
+    
+    &:nth-child(2) {
+      @include btn-primary;
+      color: #fff;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+  display: inline;
+  margin: 10px;
+}
+
+.ham {
+  display: none;
+}
+
+.overlay {
+  display: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  
+  @include center;
+  
+  @include min-width(1201) {
+    justify-content: space-around;
+  }
+}
+
+h1 {
+  font-size: 70px;
+  width: 500px;
+  
+  @include min-width(901) {
+    font-size: 30px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(2, 450px);
+  grid-gap: 80px;
+  margin: 0 auto;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: center;
+} 
+  @include min-width(901) {
+    margin: 50px;
+    max-width: 960px;
+    grid-template-columns: repeat(1, max(200px, 350px));
+}
