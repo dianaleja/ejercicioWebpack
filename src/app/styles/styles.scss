@@ -129,10 +129,6 @@ nav {
   
   @include center;
   
-  @include min-width(901) {
-    justify-content: space-between;
-  }
-  
   @include min-width(1201) {
     justify-content: space-around;
   }
