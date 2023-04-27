@@ -1,162 +1,224 @@
-/* Variables */
+//importación de fuentes//
+@import url("https://fonts.googleapis.com/css2?family=Epilogue&display=swap");
+//importación de modulos//
+@import "universals";
+@import "mixings";
 
+//variables SASS//
+$font-body: "Epilogue";
+$font-size-links: 20px;
+$color-btns: white;
 $primary-color: black;
 $secondary-color: grey;
 
-/* Mixins */
-
-@mixin center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+//propiedades al body//
+body {
+  font-family: $font-body;
+  font-size: $font-size-links;
 }
 
-@mixin button {
-  border: none;
-  outline: none;
-  background-color: transparent;
-}
-
-@mixin btn-primary {
-  padding: 15px 25px;
-  border-radius: 10px;
-  border: 1px solid $primary-color;
-  background-color: transparent;
-  color: $primary-color;
-  font-size: 15px;
-  transition: all 1s;
-  
-  &:hover {
-    background-color: $primary-color;
-    color: #fff;
-    cursor: pointer;
-    transition: all 1s;
+// Estilos nav //
+.header {
+  &__navbar {
+    justify-content: space-between;
+    display: flex;
+    padding: 40px 40px 40px 50px;
   }
-}
 
-@mixin dropdown {
-  position: relative;
-  display: inline-block;
-  
-  .dropdown-content {
-    border-radius: 10px;
-    padding: 20px;
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    width: 120px;
-    z-index: 2;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    
+  &__logo {
+    width: 90px;
+    height: auto;
+    img {
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: 200px;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+      display: flex;
+      gap: 100px;
+      list-style: none;
+    }
     a {
-      color: black;
-      padding: 10px 12px;
+      justify-content: space-between;
+      text-decoration: none;
+      color: $secondary-color;
+      font-size: $font-size-links;
+      &:hover {
+        color: $primary-color;
+        cursor: pointer;
+      }
+    }
+    .header__dropdown {
+      display: none;
+
+      &.show-dropdown {
+        display: block;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        width: 200px;
+        height: 200px;
+        border-radius: 20px;
+        padding: 10px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      }
+    }
+    .company-dropdown {
+      &.company-dropdown--hidden {
+        display: none;
+      }
+
+      &.company-dropdown--show {
+        display: block;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 600px;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        border-radius: 20px;
+        padding: 10px;
+      }
+    }
+  }
+  &__links2 {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    a {
+      text-decoration: none;
+      color: $secondary-color;
+      font-size: $font-size-links;
+      &:hover {
+        color: $primary-color;
+        cursor: pointer;
+      }
+    }
+    button {
+      @include botones;
+    }
+    &--mobile {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px 17px 80px 70px;
+  }
+
+  &__content {
+    margin: 40px;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    
+
+    &__logos {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 20px;
+    }
+    h1 {
+      display: flex;
+      font-size: 48px;
+      line-height: 1.2;
+      font-size: 100px;
+      font-weight: bold;
+    }
+    p {
+      margin: 10px 0;
+      font-size: 18px;
+      line-height: 2;
+      overflow: hidden;
+    }
+    button {
+      margin: 100px 0;
+      @include botones2;
+    }
+
+    &__logs {
+      margin-bottom: 100;
       display: flex;
       align-items: center;
-      
-      img {
-        margin-right: 10px;
-      }
-      
-      &:hover {
-        background-color: #ddd;
-      }
+      gap: 100px;
+    }
+
+    img {
+      width: 100px;
+      height: auto;
+      justify-content: space-between;
     }
   }
-  
-  &:hover .dropdown-content {
-    display: block;
-  }
-}
 
-/* Functions */
-
-@function min-width($value) {
-  @return "min-width: #{ $value }px";
-}
-
-@function max-width($value) {
-  @return "max-width: #{ $value }px";
-}
-
-/* Styles */
-
-body {
-  margin: 0;
-}
-
-.nav-ul {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  padding: 0;
-}
-
-.lock {
-  overflow: hidden;
-}
-
-.nav-btns {
-  button {
-    @include button;
-    
-    &:nth-child(2) {
-      @include btn-primary;
-      color: #fff;
+  &__image {
+    flex: 1;
+    img {
+      width: 80%;
+      height: auto;
     }
   }
 }
 
-a {
-  text-decoration: none;
-  color: $primary-color;
-  display: inline;
-  margin: 10px;
-}
+@media only screen and (max-width: 670px) {
+  .header {
+    &__links {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      align-items: flex-end;
 
-.ham {
-  display: none;
-}
+      ul {
+        flex-direction: column;
+      }
+    }
 
-.overlay {
-  display: none;
-}
+    &__links2 {
+      flex-direction: column;
+      align-items: flex-end;
+      &--mobile {
+        display: block;
+      }
+    }
+    &__wrapper {
+      flex-direction: column-reverse;
+      justify-content: center;
+    }
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  
-  @include center;
-  
-  @include min-width(1201) {
-    justify-content: space-around;
+    &__content {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 80px;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
-}
-
-h1 {
-  font-size: 70px;
-  width: 500px;
-  
-  @include min-width(901) {
-    font-size: 30px;
-    margin: 0;
-    width: 100%;
-    text-align: center;
-  }
-}
-
-.hero {
-  display: grid;
-  grid-template-columns: repeat(2, 450px);
-  grid-gap: 80px;
-  margin: 0 auto;
-  max-width: 1200px;
-  justify-content: center;
-  align-items: center;
-} 
-  @include min-width(901) {
-    margin: 50px;
-    max-width: 960px;
-    grid-template-columns: repeat(1, max(200px, 350px));
 }
