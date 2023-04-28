@@ -1,12 +1,16 @@
-const ham = document.querySelector('.ham')
-     
-       ham.addEventListener('click', e=>{
-         document.querySelector('.mobile__nav').classList.add('show')
-         document.querySelector('.overlay').style.display = 'block'
-         document.querySelector('body').classList.add('lock')
-       })
-       document.querySelector('#close-Menu').addEventListener('click', e =>{
-         document.querySelector('.mobile__nav').classList.remove('show')
-         document.querySelector('.overlay').style.display = 'none'
-         document.querySelector('body').classList.remove('lock')
-       })
+import "./index.js"
+import "./styles/styles.css"
+const featuresLink = document.getElementById("features-link");
+const companyLink = document.getElementById("company-link");
+
+featuresLink.addEventListener("click", () => {
+  console.log("Hiciste clic en el enlace de Features");
+  const featuresDropdown = document.querySelector(".features-dropdown");
+  featuresDropdown.classList.toggle("show-dropdown");
+});
+
+companyLink.addEventListener("click", () => {
+  console.log("Hiciste clic en el enlace de Company");
+  const companyDropdown = document.querySelector(".company-dropdown");
+  companyDropdown.classList.toggle("company-dropdown--show");
+});
