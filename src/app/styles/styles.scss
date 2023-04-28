@@ -28,7 +28,7 @@ body {
   
     &__logo {
       padding: 10px;
-      width: 90px;
+      width: 100px;
       height: 50px;
       img {
         justify-content: space-between;
@@ -193,6 +193,23 @@ body {
 
 @media only screen and (max-width: 670px) {
   .header {
+    &__navbar {
+      justify-content: space-between;
+      display: flex;
+      padding: 40px 40px 40px 50px;
+    }
+
+    &__logo {
+      padding: 10px;
+      width: 90px;
+      height: 30px;
+      img {
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
     &__abrirmenu{
        display: block;
     }
@@ -207,33 +224,43 @@ body {
     // &__links2{
     //   display: none;
     // }
+
     
-    // &__links {
-    //   flex-direction: column;
-    //   align-items: end;
+    
+    &__links {
+      flex-direction: column;
+      align-items: end;
      
 
-    //   ul {
-    //     gap: 14px;
-    //     flex-direction: column;  
-    //     align-items: end;      
-    //     list-style: none;
-    //     background-color: #fff;
-    //   }
-    // }
-    // &__links2 {
-    //   flex-direction: column;
-    //   align-items: center;
-    //   gap: 14px;
-    //   position: absolute;
-    //   left: 450px;
-    //   top: 260px;
+      ul {
+        gap: 14px;
+        flex-direction: column;  
+        align-items: end;  
+        background-color: #fff;
+       
+
+        
+      }
+    }
+    &__links2 {
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      position: absolute;
+      left: 500px;
+      top: 260px;
       
-    //   }
+      }
+
+      // &__visible{
+      //   opacity: 1;
+      //   visibility: visible;
+      // }
       
     &__wrapper {
       flex-direction: column-reverse;
       justify-content: center;
+      padding: 0px 0px  0px;
     }
 
     &__content {
@@ -247,5 +274,14 @@ body {
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
+    &__image {
+      flex: 1;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
+  
 }
