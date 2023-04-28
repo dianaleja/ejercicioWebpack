@@ -126,7 +126,14 @@ body {
       button {
         @include botones;
       }
+
+      &.mobile{
+        visibility: hidden;
+        display: none;
       }
+      }
+
+     
 
     &__wrapper {
       display: flex;
@@ -197,7 +204,11 @@ body {
       justify-content: space-between;
       display: flex;
       padding: 40px 40px 40px 50px;
+      
+      // opacity: 0;
+      // visibility: hidden;
     }
+    
 
     &__logo {
       padding: 10px;
@@ -224,38 +235,48 @@ body {
     // &__links2{
     //   display: none;
     // }
-
-    
     
     &__links {
       flex-direction: column;
-      align-items: end;
-     
-
+      align-items: start;
+      background-color: #fff;
+      padding: 0px 50px;
+      right: 0;
+      height: 100vh;
+      position: fixed;
+      
       ul {
         gap: 14px;
         flex-direction: column;  
-        align-items: end;  
+        align-items: start;  
         background-color: #fff;
+      }
+      .header__links2{
        
-
+        &.mobile{
+          visibility: visible;
+          button {
+          margin: 100px 0;
+          @include botones2;
+      }
+        }
         
       }
     }
     &__links2 {
       flex-direction: column;
-      align-items: center;
-      gap: 14px;
-      position: absolute;
-      left: 500px;
-      top: 260px;
-      
+      background-color: #fff;
+      padding: 20px 20p;
+      opacity: 0;
+      visibility: hidden;
       }
 
       // &__visible{
       //   opacity: 1;
       //   visibility: visible;
       // }
+
+     
       
     &__wrapper {
       flex-direction: column-reverse;
