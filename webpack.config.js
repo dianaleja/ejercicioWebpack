@@ -21,7 +21,7 @@ module: {
     //sirve para aclararle a Webpack cómo debe procesar los loaders que queramos usar para un proyecto.
     rules: [
         {
-            test: /\.js$/i,
+            test: /\.html$/i,
             loader: 'html-loader'
         },
         {
