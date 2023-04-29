@@ -1,0 +1,276 @@
+/*!*****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/app/styles/styles.css ***!
+  \*****************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Epilogue&display=swap);
+/*!*********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/app/styles/styles.css (1) ***!
+  \*********************************************************************************/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
+
+body, .header__links2 button {
+  font-family: "Epilogue";
+  font-size: 20px;
+}
+
+.header__navbar {
+  justify-content: space-between;
+  display: flex;
+  padding: 40px 40px 40px 50px;
+}
+.header__logo {
+  padding: 10px;
+  width: 100px;
+  height: 50px;
+}
+.header__logo img {
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+.header__abrirmenu {
+  display: none;
+  padding: 14px 15px;
+}
+.header__menucerrar {
+  display: none;
+}
+.header__links {
+  display: flex;
+  gap: 80px;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__links ul {
+  display: flex;
+  gap: 100px;
+  list-style: none;
+}
+.header__links a {
+  justify-content: space-between;
+  text-decoration: none;
+  color: grey;
+  font-size: 20px;
+}
+.header__links a:hover {
+  color: black;
+  cursor: pointer;
+}
+.header__links .header__dropdown {
+  display: none;
+}
+.header__links .header__dropdown.show-dropdown {
+  display: block;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100px;
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.header__links .company-dropdown.company-dropdown--hidden {
+  display: none;
+}
+.header__links .company-dropdown.company-dropdown--show {
+  display: block;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100px;
+  left: 800px;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding: 10px;
+}
+.header__links2 {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+.header__links2 a {
+  text-decoration: none;
+  color: grey;
+  font-size: 20px;
+}
+.header__links2 a:hover {
+  color: black;
+  cursor: pointer;
+}
+.header__links2 button {
+  color: grey;
+  background-color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+}
+.header__links2 button:hover {
+  background-color: black;
+  color: #fff;
+  cursor: pointer;
+  transition: all 1s;
+}
+.header__links2.mobile {
+  visibility: hidden;
+  display: none;
+}
+.header__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30px 17px 80px 70px;
+}
+.header__content {
+  margin: 40px;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+.header__content__logos {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 20px;
+}
+.header__content h1 {
+  display: flex;
+  font-size: 48px;
+  line-height: 1.2;
+  font-size: 100px;
+  font-weight: bold;
+}
+.header__content p {
+  margin: 10px 0;
+  font-size: 18px;
+  line-height: 2;
+  overflow: hidden;
+}
+.header__content button {
+  margin: 100px 0;
+  color: grey;
+  background-color: black;
+  padding: 15px 25px;
+  border-radius: 10px;
+}
+.header__content button:hover {
+  background-color: white;
+  color: #fff;
+  cursor: pointer;
+  transition: all 1s;
+}
+.header__content__logs {
+  margin-bottom: 100;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+.header__content img {
+  width: 100px;
+  height: auto;
+  justify-content: space-between;
+}
+.header__image {
+  flex: 1;
+}
+.header__image img {
+  width: 80%;
+  height: auto;
+}
+
+@media only screen and (max-width: 670px) {
+  .header__navbar {
+    justify-content: space-between;
+    display: flex;
+    padding: 40px 40px 40px 50px;
+  }
+  .header__logo {
+    padding: 10px;
+    width: 90px;
+    height: 30px;
+  }
+  .header__logo img {
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+  .header__abrirmenu {
+    display: block;
+  }
+  .header__links {
+    flex-direction: column;
+    align-items: start;
+    background-color: #fff;
+    padding: 0px 50px;
+    right: 0;
+    height: 100vh;
+    position: fixed;
+  }
+  .header__links ul {
+    gap: 14px;
+    flex-direction: column;
+    align-items: start;
+    background-color: #fff;
+  }
+  .header__links .header__links2.mobile {
+    visibility: visible;
+  }
+  .header__links .header__links2.mobile button {
+    margin: 100px 0;
+    color: grey;
+    background-color: black;
+    padding: 15px 25px;
+    border-radius: 10px;
+  }
+  .header__links .header__links2.mobile button:hover {
+    background-color: white;
+    color: #fff;
+    cursor: pointer;
+    transition: all 1s;
+  }
+  .header__links2 {
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px 20p;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .header__wrapper {
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding: 0px 0px 0px;
+  }
+  .header__content {
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 60px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .header__image {
+    flex: 1;
+  }
+  .header__image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
